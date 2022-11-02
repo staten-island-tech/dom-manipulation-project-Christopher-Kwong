@@ -8,6 +8,19 @@ const DOMSelectors = {
 function backgroundAndText(background, text) {
   background.style.backgroundColor = "red";
   text.innerHTML = "This is now a big red box";
+  text.style.fontSize = "40px";
 }
 
-backgroundAndText(DOMSelectors.box, DOMSelectors.text);
+DOMSelectors.button.addEventListener("click", function () {
+  backgroundAndText(DOMSelectors.box, DOMSelectors.text);
+});
+
+function changeLi() {
+  DOMSelectors.points.forEach((point) => {
+    point.addEventListner("cick", function () {
+      point.textContent = "Hello";
+    });
+  });
+}
+
+changeLi();
