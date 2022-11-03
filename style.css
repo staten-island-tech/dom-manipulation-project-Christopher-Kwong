@@ -1,7 +1,12 @@
-#big-black-box {
-    background-color: black;
-    font-size: 2vh;
-    color: cornsilk;
-    height: 100vh;
-    text-align: center;
-  }
+#container-box{
+  background-color: black;
+  
+  font-size: 2vh;
+  color: cornsilk;
+  text-align: center;
+  
+}
+
+.cat-poster{
+  width: 10rem;
+}
