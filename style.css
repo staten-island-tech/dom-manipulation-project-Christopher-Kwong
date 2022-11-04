@@ -1,12 +1,11 @@
-#container-box{
-  background-color: black;
-  
-  font-size: 2vh;
-  color: cornsilk;
-  text-align: center;
-  
+html, body, * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 62.5%;
 }
 
-.cat-poster{
-  width: 10rem;
+#Box {
+  background-color: lightblue;
+  font-size: 2rem;
 }
