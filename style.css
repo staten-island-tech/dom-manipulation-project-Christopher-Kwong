@@ -3,9 +3,17 @@ html, body, * {
   margin: 0;
   box-sizing: border-box;
   font-size: 62.5%;
+  text-align: center;
 }
 
-#Box {
+div {
   background-color: lightblue;
-  font-size: 2rem;
+  font-size: 5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+button {
+  padding: 0.5rem;
+  margin-right: 1rem;
 }
