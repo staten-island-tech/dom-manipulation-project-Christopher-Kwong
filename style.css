@@ -7,13 +7,12 @@ html, body, * {
 }
 
 div {
-  background-color: lightblue;
   font-size: 5rem;
   padding: 1rem;
   margin-bottom: 1rem;
 }
 
 button {
-  padding: 0.5rem;
+  padding: 0.5rem 2rem;
   margin-right: 1rem;
 }

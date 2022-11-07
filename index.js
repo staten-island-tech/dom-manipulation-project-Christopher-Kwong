@@ -4,22 +4,22 @@ const DOMSelectors = {
   Inject: document.getElementById("Inject"),
   Clear: document.getElementById("Clear"),
   Remove: document.getElementById("Remove"),
+  Clean: document.getElementById("Clean"),
 
   Output_Box: document.getElementById("Output-Box"),
 };
 
-/* DOMSelectors.Button.addEventListener("click", function () {
-  let input = DOMSelectors.Input.value;
-  DOMSelectors.Box.insertAdjacentHTML("beforeend", `<p>${input}</p>`);
-  DOMSelectors.Input.value = "";
-});
- */
+let CreatedObject = "";
 
-/* DOMSelectors.Create.addEventListener("click", function () {});
- */
+DOMSelectors.Create.addEventListener("click", function () {
+  CreatedObject = DOMSelectors.Input.value;
+});
+
 DOMSelectors.Inject.addEventListener("click", function () {
-  let input = DOMSelectors.Input.value;
-  DOMSelectors.Output_Box.insertAdjacentHTML("beforeend", `<p>${input}</p>`);
+  DOMSelectors.Output_Box.insertAdjacentHTML(
+    "beforeend",
+    `<p>${CreatedObject}</p>`
+  );
 });
 
 DOMSelectors.Clear.addEventListener("click", function () {
@@ -27,5 +27,9 @@ DOMSelectors.Clear.addEventListener("click", function () {
 });
 
 DOMSelectors.Remove.addEventListener("click", function () {
-  DOMSelectors.Input.remove();
+  CreatedObject = "";
+});
+
+DOMSelectors.Clean.addEventListener("click", function () {
+  DOMSelectors.Output_Box.innerHTML = "";
 });
