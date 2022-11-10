@@ -26,13 +26,17 @@ button {
   text-align: center;
 }
 
+button {
+  padding: 0.5rem 2rem;
+  margin-right: 1rem;
+}
+
 div {
   font-size: 5rem;
   padding: 1rem;
   margin-bottom: 1rem;
 }
 
-button {
-  padding: 0.5rem 2rem;
-  margin-right: 1rem;
+.Card {
+  border: 1rem solid black;
 }
