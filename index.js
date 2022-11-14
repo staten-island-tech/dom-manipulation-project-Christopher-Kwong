@@ -1,48 +1,19 @@
-/* const DOMSelectors = {
-  Input: document.querySelector("Input"),
-  Inject: document.getElementById("Inject"),
-  Clear: document.getElementById("Clear"),
-  Remove: document.getElementById("Remove"),
-
-  Output_Box: document.getElementById("Output-Box"),
-};
-
-DOMSelectors.Inject.addEventListener("click", function () {
-  let Create = DOMSelectors.Input.value;
-  DOMSelectors.Output_Box.insertAdjacentHTML("beforeend", `<p>${Create}</p>`);
-});
-
-DOMSelectors.Clear.addEventListener("click", function () {
-  DOMSelectors.Input.value = "";
-});
-
-DOMSelectors.Remove.addEventListener("click", function () {
-  DOMSelectors.Output_Box.innerHTML = "";
-});
- */
-
 const DOMSelectors = {
-  Input: document.querySelector("Input"),
-  Inject: document.getElementById("Inject"),
-  Clear: document.getElementById("Clear"),
-  Remove: document.getElementById("Remove"),
-  Card: document.querySelector("Card"),
+  Form: document.getElementById("Form"),
+  Input: document.getElementById("Input"),
+  Create: document.getElementById("Create"),
 
-  Output_Box: document.getElementById("Output-Box"),
+  Output: document.getElementById("Output"),
 };
 
-DOMSelectors.Inject.addEventListener("click", function () {
-  let Create = DOMSelectors.Input.value;
-  DOMSelectors.Output_Box.insertAdjacentHTML(
+DOMSelectors.Form.addEventListener("submit", (e) => {
+  e.preventDefault();
+});
+
+DOMSelectors.Create.addEventListener("click", function () {
+  let Created = DOMSelectors.Input.value;
+  DOMSelectors.Output.insertAdjacentHTML(
     "beforeend",
-    `<div class="Card"><p>${Create}</p><button type="button" id="Remove">Remove</button></div>`
+    `<div class = Box><p>${Created}</p></div>`
   );
-});
-
-DOMSelectors.Clear.addEventListener("click", function () {
-  DOMSelectors.Input.value = "";
-});
-
-DOMSelectors.Remove.addEventListener("click", function () {
-  DOMSelectors.Output_Box.remove();
 });

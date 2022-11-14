@@ -1,28 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-        <link rel="stylesheet" href="style.css" />
-    </head>
-    <body>
-        <div id="Input-Box">
-            <input type="text" class="Input" />
-        </div>
-        <div>
-            <button type="button" id="Create">Create</button>
-            <button type="button" id="Inject">Inject</button>
-            <button type="button" id="Clear">Clear</button>
-            <button type="button" id="Remove">Remove</button>
-        </div>
-        <div id="Output-Box">
-        </div>
-        <script src="index.js"></script>
-    </body>
-</html> -->
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -33,15 +8,14 @@
         <link rel="stylesheet" href="style.css" />
     </head>
     <body>
-        <div id="Input-Box">
-            <input type="text" class="Input" />
-        </div>
-        <div>
-            <button type="button" id="Inject">Inject</button>
-            <button type="button" id="Clear">Clear</button>
-        </div>
-        <div id="Output-Box">
-        </div>
+        <form id="Form">
+            <div>
+                <label for="Input">Enter:</label>
+                <input id="Input" Input="Input" type="text" required/>
+            </div>
+            <button type="submit" id="Create">Create</button>
+        </form>
+        <div id="Output"></div>
         <script src="index.js"></script>
     </body>
 </html>
