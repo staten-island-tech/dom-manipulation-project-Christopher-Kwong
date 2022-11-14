@@ -13,4 +13,6 @@ form, label, input {
 .Box {
   border: 0.1rem solid black;
   margin-top: 0.5rem;
+  text-align: center;
+  width: 6rem;
 }
