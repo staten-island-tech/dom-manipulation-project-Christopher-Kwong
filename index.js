@@ -43,14 +43,14 @@ const DOMSelectors = {
 };
 
 function CreateObject(inputString) {
-  return `<div class = Box>
+  return `<div id = Box>
       <img width="200px" src ="${inputString}">
       <br>
       <button type ="click" id = "Remove">Remove</button>
     </div>`;
 }
 
-function InsertObject(newObject, atHere) {
+function InsertObject(atHere, newObject) {
   atHere.insertAdjacentHTML("beforeend", newObject);
 }
 
@@ -58,13 +58,19 @@ function Clear(inputField) {
   inputField.value = "";
 }
 
+function Repeat() {
+  let Remove = document.getElementById("Remove");
+  let Box = document.getElementById("Box");
+  Remove.addEventListener("click", function () {
+    Box.innerHTML = "";
+  });
+}
+
 DOMSelectors.Form.addEventListener("submit", (e) => {
   e.preventDefault();
+
   let url = DOMSelectors.Image.value;
-  InsertObject(CreateObject(url), DOMSelectors.Output);
+  InsertObject(DOMSelectors.Output, CreateObject(url));
   Clear(DOMSelectors.Image);
-  let Remove = document.getElementById("Remove");
-  Remove.addEventListener("click", function () {
-    DOMSelectors.Output.innerHTML = "";
-  });
+  Repeat();
 });
