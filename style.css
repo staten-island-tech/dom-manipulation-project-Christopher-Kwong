@@ -4,15 +4,17 @@ html, body, * {
   box-sizing: border-box;
   font-size: 62.5%;
   font-size: 1rem;
+  border: 0.1rem solid black;
 }
 
-form, label, input {
+form, #Create {
   margin-top: 1rem;
 }
 
 .Box {
   border: 0.1rem solid black;
-  margin-top: 0.5rem;
+  margin: 1rem auto;
   text-align: center;
-  width: 6rem;
+  inline-size: min-content;
+  padding: 1rem;
 }

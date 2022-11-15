@@ -1,39 +1,70 @@
 /* const DOMSelectors = {
   Form: document.getElementById("Form"),
-  Input: document.getElementById("Input"),
   Create: document.getElementById("Create"),
-  Remove: document.getElementById("Remove"),
+  Image: document.getElementById("Input"),
 
   Output: document.getElementById("Output"),
 };
 
+function CreateObject(inputString) {
+  return `<div class = Box>
+      <img width="200px" src ="${inputString}">
+      <br>
+      <button type ="click" id = "Remove" onClick="RemoveObject();">Remove</button>
+    </div>`;
+}
+
+function InsertObject(newObject, atHere) {
+  atHere.insertAdjacentHTML("beforeend", newObject);
+}
+
+function Clear(inputField) {
+  inputField.value = "";
+}
+
+function RemoveObject() {
+  DOMSelectors.Output.innerHTML = "";
+}
+
 DOMSelectors.Form.addEventListener("submit", (e) => {
   e.preventDefault();
+  let url = DOMSelectors.Image.value;
+  InsertObject(CreateObject(url), DOMSelectors.Output);
+  Clear(DOMSelectors.Image);
 });
-
-DOMSelectors.Create.addEventListener("click", function () {
-  let Created = DOMSelectors.Input.value;
-  DOMSelectors.Output.insertAdjacentHTML(
-    "beforeend",
-    `<div class = Box><p>${Created}</p><button type="button" id="Remove">Remove</button></div>`
-  );
-}); */
+ */
 
 const DOMSelectors = {
   Form: document.getElementById("Form"),
-  Input: document.getElementById("Input"),
   Create: document.getElementById("Create"),
-  img: document.createElement("img"),
+  Image: document.getElementById("Input"),
+
+  Output: document.getElementById("Output"),
 };
+
+function CreateObject(inputString) {
+  return `<div class = Box>
+      <img width="200px" src ="${inputString}">
+      <br>
+      <button type ="click" id = "Remove">Remove</button>
+    </div>`;
+}
+
+function InsertObject(newObject, atHere) {
+  atHere.insertAdjacentHTML("beforeend", newObject);
+}
+
+function Clear(inputField) {
+  inputField.value = "";
+}
 
 DOMSelectors.Form.addEventListener("submit", (e) => {
   e.preventDefault();
-  img.src = `${DOMSelectors.Input}`;
-  document.body.appendChild(img);
+  let url = DOMSelectors.Image.value;
+  InsertObject(CreateObject(url), DOMSelectors.Output);
+  Clear(DOMSelectors.Image);
+  let Remove = document.getElementById("Remove");
+  Remove.addEventListener("click", function () {
+    DOMSelectors.Output.innerHTML = "";
+  });
 });
-
-const img = document.createElement("img");
-img.src = `${Input}`;
-document.body.appendChild(img);
-
-/* "https://softauthor.com/wp-content/uploads/2020/02/softauthor-logo.png" */
