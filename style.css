@@ -10,7 +10,7 @@ form, #Create {
   margin-top: 1rem;
 }
 
-.Box {
+#Box {
   border: 0.1rem solid black;
   margin: 1rem auto;
   text-align: center;
