@@ -1,10 +1,9 @@
-html, body, * {
+/* html, body, * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   font-size: 62.5%;
   font-size: 1rem;
-  border: 0.1rem solid black;
 }
 
 form, #Create {
@@ -17,4 +16,4 @@ form, #Create {
   text-align: center;
   inline-size: min-content;
   padding: 1rem;
-}
+} */

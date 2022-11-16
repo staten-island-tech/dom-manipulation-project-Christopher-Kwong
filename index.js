@@ -34,7 +34,7 @@ DOMSelectors.Form.addEventListener("submit", (e) => {
 });
  */
 
-const DOMSelectors = {
+/* const DOMSelectors = {
   Form: document.getElementById("Form"),
   Create: document.getElementById("Create"),
   Image: document.getElementById("Input"),
@@ -60,9 +60,8 @@ function Clear(inputField) {
 
 function Repeat() {
   let Remove = document.getElementById("Remove");
-  let Box = document.getElementById("Box");
   Remove.addEventListener("click", function () {
-    Box.innerHTML = "";
+    DOMSelectors.Output.innerHTML = "<p></p>";
   });
 }
 
@@ -73,4 +72,43 @@ DOMSelectors.Form.addEventListener("submit", (e) => {
   InsertObject(DOMSelectors.Output, CreateObject(url));
   Clear(DOMSelectors.Image);
   Repeat();
-});
+}); */
+
+/* let i = 0;
+let Text = "";
+
+for (; i < 10; i++) {
+  Text += `<button id = "Remove${i}">Remove${i}</button>`;
+}
+
+document.getElementById("demo").innerHTML = Text;
+
+function Repeat() {
+  let body = document.getElementById("Body");
+  Remove1.addEventListener("click", function () {
+    body.innerHTML = "<p></p>";
+  });
+}
+
+Repeat(); */
+
+let counter = 0;
+let Text = "";
+
+for (; counter <= 10; counter++) {
+  Text += `<div id=Body>
+    <button onClick="removeElement">Remove${counter}</button>
+  </div>`;
+}
+
+document.getElementById("demo").innerHTML = Text;
+
+function removeElement(Id) {
+  let Body = `Body + ${Id}`;
+  let Remove = `Remove + ${Id}`;
+  Remove.addEventListener("click", function () {
+    Body.innerHTML = "<p></p>";
+  });
+}
+
+removeElement(counter);
