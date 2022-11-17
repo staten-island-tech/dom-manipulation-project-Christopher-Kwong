@@ -1,64 +1,41 @@
 const DOMSelectors = {
   Form: document.getElementById("Form"),
   Create: document.getElementById("Create"),
-  Image: document.getElementById("Input"),
+  Image: document.getElementById("ImageInput"),
+  Text: document.getElementById("TextInput"),
 
   Output: document.getElementById("Output"),
 };
 
-function CreateObject(inputString) {
-  return `<div id = Box>
-      <img width="200px" src ="${inputString}">
-      <br>
-      <button type ="click" id = "Remove">Remove</button>
-    </div>`;
+function CreateObject(Input, SecondInput) {
+  return `<div class="Box">
+    <img class="Image" height="80px" src ="${Input}">
+    <p>${SecondInput}</p>
+  </div>`;
 }
 
-function InsertObject(atHere, newObject) {
-  atHere.insertAdjacentHTML("beforeend", newObject);
+function InsertObject(AtHere, NewObject) {
+  AtHere.insertAdjacentHTML("beforeend", NewObject);
 }
 
-function Clear(inputField) {
-  inputField.value = "";
+function Clear(Input, Input2) {
+  Input.value = "";
+  Input2.value = "";
 }
 
-function Repeat() {
-  let Remove = document.getElementById("Remove");
-  Remove.addEventListener("click", function () {});
+function Remove() {
+  let RemoveBox = document.getElementById("Remove");
+  RemoveBox.addEventListener("click", function () {
+    DOMSelectors.Output.innerHTML = "";
+  });
 }
 
 DOMSelectors.Form.addEventListener("submit", (e) => {
   e.preventDefault();
 
   let url = DOMSelectors.Image.value;
-  InsertObject(DOMSelectors.Output, CreateObject(url));
-  Clear(DOMSelectors.Image);
-  Repeat();
+  let text = DOMSelectors.Text.value;
+  InsertObject(DOMSelectors.Output, CreateObject(url, text));
+  Clear(DOMSelectors.Image, DOMSelectors.Text);
+  Remove();
 });
-
-/* let counter = 0;
-let Text = "";
-
-for (; counter <= 10; counter++) {
-  Text += `<div id=Body>
-    <button onClick="removeElement">Remove${counter}</button>
-  </div>`;
-}
-
-document.getElementById("demo").innerHTML = Text;
-
-function removeElement(Id) {
-  let Body = `Body + ${Id}`;
-  let Remove = `Remove + ${Id}`;
-  Remove.addEventListener("click", function () {
-    Body.innerHTML = "<p></p>";
-  });
-}
-
-removeElement(counter);
-  let Remove = document.getElementById("Remove");
-  Remove.addEventListener("click", function () {
-    DOMSelectors.Output.innerHTML = "";
-  });
-});
- */
