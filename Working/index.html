@@ -8,18 +8,21 @@
         <link rel="stylesheet" href="style.css" />
     </head>
     <body>
+        <h1></h1>
         <form id="Form">
-            <div>
+            <div class="Type">
                 <label for="ImageInput">URL:</label>
                 <input id="ImageInput"type="text" required/>
             </div>
-            <div>
-                <label for="TextInput">Text: (Testing)</label>
+            <div class="Type">
+                <label for="TextInput">Text:</label>
                 <input id="TextInput"type="text"/>
+                <button type="click" id="Color-Blue">Blue</button>  <!-- Testing -->
             </div>
             <button type="submit" id="Create">Create</button>
             <button type="click" id="Remove">Remove</button>
         </form>
+        <p class="OutputLabel">Output: </p>
         <div id="Output"></div>
         <script src="index.js"></script>
     </body>

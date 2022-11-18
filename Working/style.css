@@ -10,6 +10,10 @@ form, #Create {
   margin-top: 1rem;
 }
 
+.Type, #Create, #Remove, .OutputLabel, #Output {
+  margin-left: 1rem;
+}
+
 #Output {
   display: flex;
   flex-direction: row;
@@ -17,9 +21,19 @@ form, #Create {
   justify-content: space-evenly;
 
   border: 0.1rem solid black;
+  margin-top: 1rem;
   text-align: center;
 }
 
-.Image, .Text {
-  margin-top: 5rem;
+.Box {
+  border: 0.1rem solid black;
+  margin: 1rem 0rem;
+}
+
+.Image{
+  margin: 0.5rem;
+}
+
+.OutputLabel {
+  margin-top: 1rem;
 }
