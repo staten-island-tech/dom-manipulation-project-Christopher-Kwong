@@ -18,11 +18,8 @@ form, #Create {
 
   border: 0.1rem solid black;
   text-align: center;
-  padding: 1rem;
-  margin-top: 1rem;
 }
 
-.Image {
-  border: 0.1rem solid black;
-  margin-top: 1rem;
+.Image, .Text {
+  margin-top: 5rem;
 }
