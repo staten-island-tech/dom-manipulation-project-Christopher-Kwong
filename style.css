@@ -10,10 +10,17 @@ form, #Create {
   margin-top: 1rem;
 }
 
-#Box {
+#Output {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
   border: 0.1rem solid black;
-  margin: 1rem auto;
   text-align: center;
-  inline-size: min-content;
-  padding: 1rem;
-} 
+}
+
+.Box {
+  border: 0.1rem solid black;
+  margin: 1rem;
+}
