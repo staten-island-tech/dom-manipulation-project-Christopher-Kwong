@@ -3,26 +3,30 @@ const DOMSelectors = {
   Create: document.getElementById("Create"),
   Image: document.getElementById("ImageInput"),
   Text: document.getElementById("TextInput"),
-
-  Blue: document.getElementById("Color-Blue"), //Testing
+  Title: document.getElementById("TitleInput"),
 
   Output: document.getElementById("Output"),
 };
 
-function CreateObject(Input, SecondInput) {
+document.body.style.backgroundColor = "lightgrey";
+DOMSelectors.Output.style.backgroundColor = "lightblue";
+
+function CreateObject(Input, SecondInput, ThirdInput) {
   return `<div class="Box"> 
-    <img class="Image" height="80px" src ="${Input}">
-    <p class="Text">${SecondInput}</p>
+    <p class="Text">${Input}</p>
+    <img class="Image" height="80px" src ="${SecondInput}">
+    <p class="Text">${ThirdInput}</p>
   </div>`;
 }
 
-function InsertObject(AtHere, NewObject) {
-  AtHere.insertAdjacentHTML("beforeend", NewObject);
+function InsertObject(Area, Object) {
+  Area.insertAdjacentHTML("beforeend", Object);
 }
 
-function Clear(Input, Input2) {
+function Clear(Input, Input2, Input3) {
   Input.value = "";
   Input2.value = "";
+  Input3.value = "";
 }
 
 function Remove() {
@@ -32,20 +36,15 @@ function Remove() {
   });
 }
 
-function BlueChange() {
-  //Testing
-  DOMSelectors.Blue.addEventListener("click", function () {
-    DOMSelectors.Text.color = "blue";
-  });
-}
-
 DOMSelectors.Form.addEventListener("submit", (e) => {
   e.preventDefault();
 
   let url = DOMSelectors.Image.value;
   let text = DOMSelectors.Text.value;
-  InsertObject(DOMSelectors.Output, CreateObject(url, text));
-  BlueChange(); //Testing
-  Clear(DOMSelectors.Image, DOMSelectors.Text);
+  let title = DOMSelectors.Title.value;
+  let boldtitle = title.bold();
+
+  InsertObject(DOMSelectors.Output, CreateObject(boldtitle, url, text));
+  Clear(DOMSelectors.Title, DOMSelectors.Image, DOMSelectors.Text);
   Remove();
 });
