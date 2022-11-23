@@ -26,7 +26,8 @@ form, #Create {
   flex-wrap: wrap;
   justify-content: space-evenly;
 
-  margin-top: 1rem;
+  width: 80%;
+  margin: 1rem auto;
 }
 
 .Box {

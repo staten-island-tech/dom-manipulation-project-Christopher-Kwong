@@ -11,9 +11,9 @@ const DOMSelectors = {
 document.body.style.backgroundColor = "lightgrey";
 DOMSelectors.Output.style.backgroundColor = "lightblue";
 
-function CreateObject(Input, SecondInput, ThirdInput) {
+function CreateObject(FirstInput, SecondInput, ThirdInput) {
   return `<div class="Box"> 
-    <p class="Text">${Input}</p>
+    <p class="Text">${FirstInput}</p>
     <img class="Image" height="80px" src ="${SecondInput}">
     <p class="Text">${ThirdInput}</p>
   </div>`;
@@ -23,8 +23,8 @@ function InsertObject(Area, Object) {
   Area.insertAdjacentHTML("beforeend", Object);
 }
 
-function Clear(Input, Input2, Input3) {
-  Input.value = "";
+function Clear(Input1, Input2, Input3) {
+  Input1.value = "";
   Input2.value = "";
   Input3.value = "";
 }
