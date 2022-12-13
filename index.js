@@ -7,15 +7,17 @@ const DOMSelectors = {
 
   Output: document.getElementById("Output"),
 };
+var uniqueId = 0;
 
 document.body.style.backgroundColor = "lightgrey";
 DOMSelectors.Output.style.backgroundColor = "lightblue";
 
-function CreateObject(FirstInput, SecondInput, ThirdInput) {
+function CreateObject(FirstInput, SecondInput, ThirdInput, id) {
   return `<div class="Box"> 
     <p class="Text">${FirstInput}</p>
     <img class="Image" height="80px" src ="${SecondInput}">
     <p class="Text">${ThirdInput}</p>
+    <button type="click" id="${id}">Remove</button>
   </div>`;
 }
 
@@ -29,10 +31,10 @@ function Clear(Input1, Input2, Input3) {
   Input3.value = "";
 }
 
-function Remove() {
-  let RemoveBox = document.getElementById("Remove");
-  RemoveBox.addEventListener("click", function () {
-    DOMSelectors.Output.innerHTML = "";
+function Remove(id) {
+  let Button = document.getElementById(id);
+  Button.addEventListener("click", function () {
+    this.parentElement.remove();
   });
 }
 
@@ -41,10 +43,10 @@ DOMSelectors.Form.addEventListener("submit", (e) => {
 
   let url = DOMSelectors.Image.value;
   let text = DOMSelectors.Text.value;
-  let title = DOMSelectors.Title.value;
-  let boldtitle = title.bold();
-
-  InsertObject(DOMSelectors.Output, CreateObject(boldtitle, url, text));
+  let title = DOMSelectors.Title.value.bold();
+  let newId = "Remove" + uniqueId;
+  uniqueId++;
+  InsertObject(DOMSelectors.Output, CreateObject(title, url, text, newId));
   Clear(DOMSelectors.Title, DOMSelectors.Image, DOMSelectors.Text);
-  Remove();
+  Remove(newId);
 });
